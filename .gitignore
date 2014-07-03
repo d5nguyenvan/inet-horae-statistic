@@ -1,0 +1,19 @@
+/.gradle
+/out/
+/inet-horae-statistic.iws
+**/build
+**/bin
+
+# intellij
+inet-horae-statistic.iml
+inet-horae-statistic.ipr
+**/*.iml
+
+# eclipse files
+**.classpath
+**.project
+**.springBeans
+**/.settings
+
+**/rebel.xml
+/build/

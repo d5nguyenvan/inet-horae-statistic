@@ -1,0 +1,137 @@
+body{
+  font-family: Arial, Verdana, Geneva, Lucida, 'lucida grande', helvetica, sans-serif;
+
+}
+
+#iframe-content {
+  border: none;
+  width: 100%;
+}
+#iframe-viewer-content {
+  border: none;
+  width: 100%;
+}
+#page-content {
+  padding: 0px !important;
+}
+#wg-toolbar {
+  background-color: #f5f5f5;
+  padding: 5px;
+  border-bottom: 1px solid #e5e5e5;
+  position: fixed;
+}
+#wg-content {
+  padding: 44px 5px 0px 5px;
+}
+#wg-content-top {
+  background-color: #eff3f8;
+  padding-top: 5px;
+}
+.wg-toolbar {
+  background-color: #f5f5f5;
+  padding: 5px;
+  border-bottom: 1px solid #e5e5e5;
+  position: fixed;
+}
+.wg-content {
+  padding: 44px 5px 0px 5px;
+}
+
+.wg-content * {
+    font-size: 13px !important;
+}
+
+#btn-scroll-up{
+ min-height: 20px !important;
+ height: 20px !important;
+}
+.hide {
+  display: none;
+}
+
+/**
+ * ============LOADING==============
+ */
+#loading-msg {
+    padding: 5px;
+    position: relative;
+}
+.ajax-loading-indicator {
+  border: 1px solid #a3bad9;
+  background-color:#ffffcc;
+  color: #444;
+  font-size: 13px !important;
+  padding: 10px;
+  margin: 0;
+  height: auto;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px
+}
+
+.ajax-loading-indicator-overlay {
+  background-color: rgba(0,0,0,0.3);
+}
+
+/*
+ * ============COMMON CSS==============
+ */
+.error {
+  border: 1px solid #ff0000 !important;
+}
+div.error{
+  padding:2px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px
+}
+.required:before {
+  color: #ff0000;
+  content: "*";
+}
+.text-right {
+  text-align:right !important;
+}
+.text-center {
+  text-align:center !important;
+}
+textarea {
+  resize: none !important;
+}
+
+/**
+ * Notify Icon===============================================
+ */
+.picon-system-help {background-image:url("../images/pnotify/system-help.png")}
+.picon-process-stop {background-image:url("../images/pnotify/process-stop.png")}
+.picon-dialog-error {background-image:url("../images/pnotify/dialog-error.png")}
+.picon-dialog-info,.picon-dialog-success {background-image:url("../images/pnotify/dialog-information.png")}
+.picon-dialog-warning {background-image:url("../images/pnotify/dialog-warning.png")}
+.flat {
+  border-radius: 0;
+}
+.advance-search {
+  border-color: #bcd4e5;
+  box-shadow: 0 2px 4px rgba(30,30,100,0.25);
+  top: 90px;
+  right: 10px;
+  left: 10px;
+  padding: 4px;
+  background-color:#ECF2F7;
+}
+.ilabel{
+  padding-left: 5px;
+  padding-top: 5px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.margin-top-10{
+	margin-top: 10px;
+}
+
+.no-margin {
+    margin: 0!important;
+}
+th.merge-col {
+    text-align: center !important;
+    vertical-align:middle !important;
+}
