@@ -40,17 +40,16 @@ class SummaryController {
 
   @RequestMapping(value = '/index.iws', method = [RequestMethod.GET])
   String index(Model model, @RequestParam(value = "unit", required = false) String unit) {
-    model.addAttribute('auto_update_date', '12:00;03/07/2014')
-    model.addAttribute('total', 12003)
+    model.addAttribute('auto_update_date', '12:30;03/07/2014')
+    model.addAttribute('total', 79772)
     model.addAttribute('month_unit', '7;Thành phố')
-    model.addAttribute('token', 'token')
+    model.addAttribute('token', 'DU5PJU3GtHbQaX0zxiWoCMq8Z')
 
     'summary/index'
   }
 
   @RequestMapping(value='/details.iws', method = [RequestMethod.GET, RequestMethod.POST])
   String details(HttpSession httpSession) {
-
     'summary/details'
   }
 }
