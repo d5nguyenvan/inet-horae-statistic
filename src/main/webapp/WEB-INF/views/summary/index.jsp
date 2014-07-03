@@ -38,7 +38,7 @@
             <span style="font-size: 14px;font-weight: bold;color:#1F497D;margin-bottom: 5px;">
                 <spring:message code="summary.body.summary_message" arguments="${month_unit}" argumentSeparator=";"/>
             </span>
-      <div style="padding-bottom: 5px;"></div>
+      <div style="padding-bottom: 7px;"></div>
       <spring:url value="/summary/details.iws?token=${token}" var="details_url"/>
       <a href="${details_url}" target="_blank" style="text-decoration: none;">
         <span style="color:#C00000;font-size: 40px; font-weight: bold;"> <fmt:formatNumber value="${total}" type="number"/></span>
@@ -46,7 +46,7 @@
         <span style="color:#1F497D;font-weight:bold;font-size: 90%"> <spring:message code="summary.body.summary_unit"/> <spring:message code="summary.body.summary_network"/></span>
         <br />
       </a>
-        <div style="padding-bottom: 5px;"></div>
+        <div style="padding-bottom: 7px;"></div>
         <span style="font-size: 11px;font-style: italic;font-weight:bold;color:#1F497D">
           (<spring:message code="summary.body.summary_footer" arguments="${auto_update_date}" argumentSeparator=";"/>)
         </span>
