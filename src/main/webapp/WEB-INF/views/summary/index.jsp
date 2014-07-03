@@ -2,13 +2,14 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="vi">
 <head>
-    <title><spring:message code="summary.head.title"/></title>
-    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><spring:message code="summary.head.title"/></title>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <body>
 <div class="widget-box widget-color-blue" style="font-family: Arial, Verdana, Geneva, Lucida, 'lucida grande', helvetica, sans-serif;
     padding: 0;box-shadow: none;margin: 3px 0;border-bottom: 1px solid #CCC;">
-    <div style="position: relative;
+  <div style="position: relative;
     min-height: 38px;
     background: #f2f2f2;
     background: -moz-linear-gradient(top, #fff 0, #eee 100%);
@@ -24,19 +25,19 @@
     padding-left: 12px;
     text-align: right;position: relative;background: #307ECC;border-color: #307ECC;color: #FFF;min-height: 31px;padding-left: 10px;
     filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);">
-        <h6 style="line-height: 36px;padding: 0;margin: 0;float: left;text-align: left;font-size: 13px;">
-            <spring:message code="summary.body.title"/>
-        </h6>
+    <div style="line-height: 36px;padding: 0;margin: 0;float: left;text-align: left;font-size: 13px;font-weight: bold;">
+      <spring:message code="summary.body.title"/>
     </div>
+  </div>
 
-    <div style="border: 1px solid #307ECC;border-top: 0;background-color: #FFF;">
-        <div style="padding: 12px;text-align: center">
+  <div style="border: 1px solid #307ECC;border-top: 0;background-color: #FFF;">
+    <div style="padding: 12px;text-align: center">
             <span style="font-size: 14px;font-weight: bold;">
                 <spring:message code="summary.body.summary_message" arguments="${month_unit}" argumentSeparator=";"/>
             </span>
-            <br />
-            <spring:url value="/summary/details.iws?token=${token}" var="details_url"/>
-            <a href="${details_url}" target="_blank" style="text-decoration: none;">
+      <br />
+      <spring:url value="/summary/details.iws?token=${token}" var="details_url"/>
+      <a href="${details_url}" target="_blank" style="text-decoration: none;">
       <span class="" style=" display: inline-block;
     color: #FFF !important;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !important;
@@ -81,13 +82,13 @@
         <br>
         <span style="line-height: 1;font-size: 90%"> <spring:message code="summary.body.summary_unit"/></span>
       </span>
-        </a>
-        <br>
+      </a>
+      <br>
         <span style="font-size: 11px;font-style: italic;">
           (<spring:message code="summary.body.summary_footer" arguments="${auto_update_date}" argumentSeparator=";"/>)
         </span>
-      </div>
     </div>
   </div>
+</div>
 </body>
 </html>
