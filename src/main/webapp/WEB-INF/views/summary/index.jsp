@@ -41,47 +41,6 @@
       <br />
       <spring:url value="/summary/details.iws?token=${token}" var="details_url"/>
       <a href="${details_url}" target="_blank" style="text-decoration: none;">
-      <!--span class="" style=" display: inline-block;
-    color: #FFF !important;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !important;
-    background-image: none !important;
-    border: 5px solid #FFF;
-    border-radius: 0;
-    box-shadow: none !important;
-    -webkit-transition: all ease .15s;
-    transition: all ease .15s;
-    cursor: pointer;
-    vertical-align: middle;
-    margin: 0;
-    position: relative;
-    display: inline-block;
-    min-width: 100px;
-    font-size: 18px;
-    font-weight: normal;
-    color: #FFF;
-    text-align: center;
-    text-shadow: 0 -1px -1px rgba(0, 0, 0, 0.2) !important;
-    border: 0;
-    border-radius: 12px;
-    padding: 12px 0 8px;
-    margin: 2px;
-    line-height: 1.7;
-    position: relative;
-    min-height: 50px;
-    width: 80px;
-    font-size: 16px;
-    border-radius: 10px;
-    line-height: 1.5;
-    background: #fee088 !important;
-    background-image: -webkit-gradient(linear, left 0, left 100%, from(#ffe8a5), to(#fcd76a)) !important;
-    background-image: -webkit-linear-gradient(top, #ffe8a5, 0%, #fcd76a, 100%) !important;
-    background-image: -moz-linear-gradient(top, #ffe8a5 0, #fcd76a 100%) !important;
-    background-image: linear-gradient(to bottom, #ffe8a5 0, #fcd76a 100%) !important;
-    background-repeat: repeat-x !important;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffe8a5', endColorstr='#fffcd76a', GradientType=0) !important;
-    color: #963 !important;
-    text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.4) !important;" -->
-
         <span style="color:#C00000;font-size: 170%; font-weight: bold;"> <fmt:formatNumber value="${total}" type="number"/> <spring:message code="summary.body.summary_unit"/> </span>
         <br />
         <span style="color:#1F497D;font-size: 90%"> <spring:message code="summary.body.summary_network"/></span>
