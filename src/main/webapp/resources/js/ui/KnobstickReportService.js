@@ -125,7 +125,8 @@ $(function () {
 
     var grid = new iNet.ui.grid.Grid({
         id: 'knobstick-report-grid',
-        url: '#',
+        //url: '#',
+        firstLoad: false,
         dataSource: dataSource,
         idProperty: 'agency_id',
         params: {
@@ -152,7 +153,7 @@ $(function () {
             return __items;
         }
     });
-
+    grid.loadData([]);
     onResize();
 
 });

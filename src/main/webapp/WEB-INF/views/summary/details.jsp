@@ -6,9 +6,10 @@
 %>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="vi">
 <head>
-  <title><spring:message code="summary.head.title"/></title>
-  <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, IE=edge" http-equiv="X-UA-Compatible">
+    <title><spring:message code="summary.head.title"/></title>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" type="text/css" href="<%=resource%>/css/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="<%=resource%>/css/bootstrap-responsive.css"/>
 
@@ -22,6 +23,7 @@
     <link rel="stylesheet" type="text/css" href="<%=resource%>/css/horae.css"/>
     <link rel="stylesheet" type="text/css" href="<%=resource%>/css/bootstrap-datepicker.css"/>
     <link rel="stylesheet" type="text/css" href="<%=resource%>/css/grid.css"/>
+
 <body class="navbar-fixed" style="overflow: hidden">
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
