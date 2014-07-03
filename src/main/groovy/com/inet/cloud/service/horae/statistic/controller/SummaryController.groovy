@@ -49,8 +49,8 @@ class SummaryController {
   }
 
   @RequestMapping(value='/details.iws', method = [RequestMethod.GET, RequestMethod.POST])
-  @ResponseBody
   String details(HttpSession httpSession) {
-    '{hello:1}'
+
+    'summary/details'
   }
 }

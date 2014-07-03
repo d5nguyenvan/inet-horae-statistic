@@ -4,8 +4,7 @@
 <head>
   <title><spring:message code="summary.head.title"/></title>
   <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, IE=edge" http-equiv="X-UA-Compatible">
 <body>
 <div class="widget-box widget-color-blue" style="font-family: Arial, Verdana, Geneva, Lucida, 'lucida grande', helvetica, sans-serif;
     padding: 0;box-shadow: none;margin: 3px 0;border-bottom: 1px solid #CCC;">
