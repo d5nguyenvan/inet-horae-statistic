@@ -35,19 +35,19 @@
 
   <div style="border: 1px solid #307ECC;border-top: 0;background-color: #FFF;">
     <div style="padding: 12px;text-align: center">
-            <span style="font-size: 14px;font-weight: bold;color:#1F497D;">
+            <span style="font-size: 14px;font-weight: bold;color:#1F497D;margin-bottom: 5px;">
                 <spring:message code="summary.body.summary_message" arguments="${month_unit}" argumentSeparator=";"/>
             </span>
-      <br />
+      <div style="padding-bottom: 5px;"></div>
       <spring:url value="/summary/details.iws?token=${token}" var="details_url"/>
       <a href="${details_url}" target="_blank" style="text-decoration: none;">
-        <span style="color:#C00000;font-size: 170%; font-weight: bold;"> <fmt:formatNumber value="${total}" type="number"/> <spring:message code="summary.body.summary_unit"/> </span>
+        <span style="color:#C00000;font-size: 40px; font-weight: bold;"> <fmt:formatNumber value="${total}" type="number"/></span>
         <br />
-        <span style="color:#1F497D;font-size: 90%"> <spring:message code="summary.body.summary_network"/></span>
+        <span style="color:#1F497D;font-weight:bold;font-size: 90%"> <spring:message code="summary.body.summary_unit"/> <spring:message code="summary.body.summary_network"/></span>
         <br />
       </a>
-      <br>
-        <span style="font-size: 11px;font-style: italic;">
+        <div style="padding-bottom: 5px;"></div>
+        <span style="font-size: 11px;font-style: italic;font-weight:bold;color:#1F497D">
           (<spring:message code="summary.body.summary_footer" arguments="${auto_update_date}" argumentSeparator=";"/>)
         </span>
     </div>
