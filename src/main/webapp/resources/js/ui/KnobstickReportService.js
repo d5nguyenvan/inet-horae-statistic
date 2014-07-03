@@ -53,7 +53,7 @@ $(function () {
                 align: 'right',
                 width: 150,
                 renderer: function (v, record) {
-                    return record.number_of_sent+ record.number_of_received;
+                    return record.number_of_sent+ record.number_of_received_success;
                 }
             }
         ]
