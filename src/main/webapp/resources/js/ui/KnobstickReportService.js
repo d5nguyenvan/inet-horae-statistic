@@ -29,7 +29,7 @@ $(function () {
                 sortable: true,
                 type: 'label',
                 align: 'right',
-                width: 150,
+                width: 100,
                 renderer: function (v) {
                     return v;
                 }
@@ -40,7 +40,7 @@ $(function () {
                 sortable: true,
                 type: 'label',
                 align: 'right',
-                width: 150,
+                width: 100,
                 renderer: function (v, data) {
                     return v || 0;
                 }
@@ -53,7 +53,7 @@ $(function () {
                 align: 'right',
                 width: 150,
                 renderer: function (v, record) {
-                    return record.number_of_sent+ record.number_of_received;
+                    return String.format('<b style="color:blue">{0}</b>',record.number_of_sent+ record.number_of_received);
                 }
             }
         ]
@@ -219,5 +219,7 @@ $(function () {
     $('#knobstick-number-of-received').text(number_of_received);
     $('#knobstick-number-of-sent').text(number_of_sent);
   });
+
+  $('th[data-property="number_of_received"]:last').trigger('click').trigger('click');
 
 });

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <body>
-<div class="widget-box widget-color-blue" style="font-family: Arial, Verdana, Geneva, Lucida, 'lucida grande', helvetica, sans-serif;
+<div style="font-family: Arial, Verdana, Geneva, Lucida, 'lucida grande', helvetica, sans-serif;
     padding: 0;box-shadow: none;margin: 3px 0;border-bottom: 1px solid #CCC;">
   <div style="position: relative;
     min-height: 38px;
@@ -23,22 +23,25 @@
     border: 1px solid #CCC;
     border-bottom: 1px solid #DDD;
     padding-left: 12px;
-    text-align: right;position: relative;background: #307ECC;border-color: #307ECC;color: #FFF;min-height: 31px;padding-left: 10px;
+    text-align: center;
+    position: relative;
+    background: #4F81BD;
+    border-color: #1F497D;color: #FFF;min-height: 31px;padding-left: 10px;
     filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);">
-    <div style="line-height: 36px;padding: 0;margin: 0;float: left;text-align: left;font-size: 13px;font-weight: bold;">
+    <div style="width:100%;line-height: 36px;padding: 0;margin: 0;float: left;text-align: center;font-size: 13px;font-weight: bold;">
       <spring:message code="summary.body.title"/>
     </div>
   </div>
 
   <div style="border: 1px solid #307ECC;border-top: 0;background-color: #FFF;">
     <div style="padding: 12px;text-align: center">
-            <span style="font-size: 14px;font-weight: bold;">
+            <span style="font-size: 14px;font-weight: bold;color:#1F497D;">
                 <spring:message code="summary.body.summary_message" arguments="${month_unit}" argumentSeparator=";"/>
             </span>
       <br />
       <spring:url value="/summary/details.iws?token=${token}" var="details_url"/>
       <a href="${details_url}" target="_blank" style="text-decoration: none;">
-      <span class="" style=" display: inline-block;
+      <!--span class="" style=" display: inline-block;
     color: #FFF !important;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !important;
     background-image: none !important;
@@ -77,11 +80,12 @@
     background-repeat: repeat-x !important;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffe8a5', endColorstr='#fffcd76a', GradientType=0) !important;
     color: #963 !important;
-    text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.4) !important;">
-        <span style="line-height: 1;font-size: 170%"> <fmt:formatNumber value="${total}" type="number"/> </span>
-        <br>
-        <span style="line-height: 1;font-size: 90%"> <spring:message code="summary.body.summary_unit"/></span>
-      </span>
+    text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.4) !important;" -->
+
+        <span style="color:#C00000;font-size: 170%; font-weight: bold;"> <fmt:formatNumber value="${total}" type="number"/> <spring:message code="summary.body.summary_unit"/> </span>
+        <br />
+        <span style="color:#1F497D;font-size: 90%"> <spring:message code="summary.body.summary_network"/></span>
+        <br />
       </a>
       <br>
         <span style="font-size: 11px;font-style: italic;">
