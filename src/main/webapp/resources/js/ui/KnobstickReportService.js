@@ -31,9 +31,6 @@ $(function () {
                 align: 'right',
                 width: 150,
                 renderer: function (v) {
-                    if (v > 0) {
-                        return String.format('<a href="javascript:;">{0}</a>', v);
-                    }
                     return v;
                 }
             },
