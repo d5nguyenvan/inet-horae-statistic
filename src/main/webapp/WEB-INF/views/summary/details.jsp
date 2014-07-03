@@ -52,25 +52,25 @@
                             <div class="row-fluid">
                                 <div class="span3">
                                     <div class="input-icon input-icon-right date">
-                                        <input id="knobstick-report-search-basic-txt-fromdate" placeholder='<spring:message code="detail.body.fdate"/>' type="text" class="span12"/>
+                                        <input id="knobstick-report-search-basic-txt-fromdate" placeholder='<spring:message code="detail.body.fdate"/>'  disabled="disabled" value="01/01/2014" type="text" class="span12"/>
                                         <i class="icon-calendar"></i>
                                     </div>
                                 </div>
                                 <div class="span3">
                                     <div class="input-icon input-icon-right date">
-                                        <input id="knobstick-report-search-basic-txt-todate" placeholder='<spring:message code="detail.body.tdate"/>' type="text" class="span12"/>
+                                        <input id="knobstick-report-search-basic-txt-todate" value="03/07/2014"  disabled="disabled" placeholder='<spring:message code="detail.body.tdate"/>' type="text" class="span12"/>
                                         <i class="icon-calendar"></i>
                                     </div>
                                 </div>
                                 <div class="span3">
-                                    <select id="knobstick-report-search-basic-select-type" class="span12">
+                                    <select id="knobstick-report-search-basic-select-type" class="span12" disabled="disabled">
                                         <option value="" selected="selected"><spring:message code="detail.body.type_all"/></option>
                                         <option value="edoc"><spring:message code="detail.body.type_edoc"/></option>
                                         <option value="etask" disabled><spring:message code="detail.body.type_etask"/></option>
                                     </select>
                                 </div>
                                 <div class="span3">
-                                    <button data-action-search="search" type="button" class="btn btn-small">
+                                    <button data-action-search="search" type="button" class="btn btn-small" disabled="disabled">
                                         <i class="icon-search"></i> <spring:message code="detail.body.submit"/>
                                     </button>
                                 </div>
