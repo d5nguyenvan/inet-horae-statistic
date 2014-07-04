@@ -44,7 +44,7 @@ class SummaryController {
     model.addAttribute('total', 79652)
     model.addAttribute('month_unit', '7;Thành phố')
     model.addAttribute('token', 'DU5PJU3GtHbQaX0zxiWoCMq8Z')
-    model.addAttribute('unit', 59)
+    model.addAttribute('total_unit', 59)
 
     'summary/index'
   }
