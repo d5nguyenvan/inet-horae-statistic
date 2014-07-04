@@ -52,13 +52,13 @@
                             <div class="row-fluid">
                                 <div class="span3">
                                     <div class="input-icon input-icon-right date">
-                                        <input id="knobstick-report-search-basic-txt-fromdate" placeholder='<spring:message code="detail.body.fdate"/>'  disabled="disabled" value="01/01/2014" type="text" class="span12"/>
+                                        <input id="knobstick-report-search-basic-txt-fromdate" placeholder='<spring:message code="detail.body.fdate"/>'  disabled="disabled" type="text" class="span12"/>
                                         <i class="icon-calendar"></i>
                                     </div>
                                 </div>
                                 <div class="span3">
                                     <div class="input-icon input-icon-right date">
-                                        <input id="knobstick-report-search-basic-txt-todate" value="03/07/2014"  disabled="disabled" placeholder='<spring:message code="detail.body.tdate"/>' type="text" class="span12"/>
+                                        <input id="knobstick-report-search-basic-txt-todate" disabled="disabled" placeholder='<spring:message code="detail.body.tdate"/>' type="text" class="span12"/>
                                         <i class="icon-calendar"></i>
                                     </div>
                                 </div>

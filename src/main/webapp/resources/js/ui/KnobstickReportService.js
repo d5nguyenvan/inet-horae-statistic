@@ -46,14 +46,14 @@ $(function () {
                 }
             },
             {
-                property: 'number_of_received',
+                property: 'total',
                 label: iNet.resources.admin.knobstick.number_of_received_field,
                 sortable: true,
                 type: 'label',
                 align: 'right',
                 width: 150,
-                renderer: function (v, record) {
-                    return String.format('<b style="color:blue">{0}</b>',record.number_of_sent+ record.number_of_received);
+                renderer: function (v) {
+                    return String.format('<b style="color:blue">{0}</b>', v);
                 }
             }
         ]
@@ -69,12 +69,11 @@ $(function () {
             this.$fromDate = $('#knobstick-report-search-basic-txt-fromdate');
             this.$toDate = $('#knobstick-report-search-basic-txt-todate');
             this.$type = $('#knobstick-report-search-basic-select-type');
-/*
+
             var now = new Date();
             this.$toDate.attr('value', now.format('d/m/Y'));
-            now.setDate(now.getDate() - 7);
-            this.$fromDate.attr('value', now.format('d/m/Y'));
-
+            //now.setDate(now.getDate() - 7);
+            this.$fromDate.attr('value', new Date('01/01/' + now.getFullYear()).format('d/m/Y'));
             var fromDate = this.$fromDate.datepicker({
                 format: 'dd/mm/yyyy'
             }).on('changeDate',function (ev) {
@@ -99,7 +98,6 @@ $(function () {
                 $(this).prev().focus();
             });
 
-*/
         },
         getUrl: function () {
             return this.url;
@@ -144,7 +142,7 @@ $(function () {
         */
         pageSize: 100
     });
-  grid.loadData([
+  var __items = [
     {"agency_id": "529d1ac3e4b0c7926ebf525a", "agency_code": "00.84.H29", "agency_name": "Ban quản lý Khu đô thị mới Thủ Thiêm", "number_of_sent": 0, "number_of_received": 11, "number_of_received_success": 0, "number_of_received_failure": 0, "number_of_not_received": 11},
     {"agency_id": "529d1a84e4b0c7926ebf522c", "agency_code": "00.81.H29", "agency_name": "Ban quản lý các Khu liên hợp xử lý chất thải", "number_of_sent": 0, "number_of_received": 1, "number_of_received_success": 0, "number_of_received_failure": 0, "number_of_not_received": 1},
     {"agency_id": "529d1a98e4b0c7926ebf523a", "agency_code": "00.82.H29", "agency_name": "Ban quản lý khu Chế xuất – công nghiệp", "number_of_sent": 0, "number_of_received": 24, "number_of_received_success": 24, "number_of_received_failure": 0, "number_of_not_received": 0},
@@ -204,22 +202,20 @@ $(function () {
     {"agency_id": "52779b54e4b0f478e09b97d4", "agency_code": "00.57.H29", "agency_name": "Ủy ban nhân dân Quận Tân Bình", "number_of_sent": 500, "number_of_received": 1497, "number_of_received_success": 1496, "number_of_received_failure": 0, "number_of_not_received": 1},
     {"agency_id": "529d19c0e4b0c7926ebf5180", "agency_code": "00.64.H29", "agency_name": "Ủy ban nhân dân Quận Tân Phú", "number_of_sent": 5, "number_of_received": 1264, "number_of_received_success": 300, "number_of_received_failure": 0, "number_of_not_received": 964},
     {"agency_id": "52779c56e4b0f478e09b9804", "agency_code": "00.00.H29", "agency_name": "Ủy ban nhân dân Thành Phố", "number_of_sent": 6902, "number_of_received": 5150, "number_of_received_success": 5150, "number_of_received_failure": 0, "number_of_not_received": 0}
-  ]);
-    onResize();
-  grid.on('loaded', function () {
-    var store = grid.getStore();
-    var number_of_received = 0;
-    var number_of_sent = 0;
-    var __records = store.values() || [];
-    for (var i = 0; i < __records.length; i++) {
-      var __record = __records[i] || {};
-      number_of_received += __record.number_of_received;
-      number_of_sent += __record.number_of_sent;
-    }
-    $('#knobstick-number-of-received').text(number_of_received);
-    $('#knobstick-number-of-sent').text(number_of_sent);
-  });
+  ];
+  var sum_number_of_received = 0;
+  var sum_number_of_sent = 0;
+  for (var i = 0; i < __items.length; i++) {
+    var __item = __items[i] || {};
+    __item.total = __item.number_of_received + __item.number_of_sent;
+    sum_number_of_received += __item.number_of_received;
+    sum_number_of_sent += __item.number_of_sent;
+  }
+  $('#knobstick-number-of-received').text(sum_number_of_received);
+  $('#knobstick-number-of-sent').text(sum_number_of_sent);
+  grid.loadData(__items);
 
-  $('th[data-property="number_of_received"]:last').trigger('click').trigger('click');
+  $('th[data-property="total"]:last').trigger('click').trigger('click');
 
+  onResize();
 });
