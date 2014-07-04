@@ -140,7 +140,9 @@ $(function () {
             return __items;
         },
         */
-        pageSize: 100
+        pageSize: 100,
+        sortDirection: 'desc',
+        sortProperty: 'total'
     });
   var __items = [
     {"agency_id": "529d1ac3e4b0c7926ebf525a", "agency_code": "00.84.H29", "agency_name": "Ban quản lý Khu đô thị mới Thủ Thiêm", "number_of_sent": 0, "number_of_received": 11, "number_of_received_success": 0, "number_of_received_failure": 0, "number_of_not_received": 11},
@@ -214,8 +216,6 @@ $(function () {
   $('#knobstick-number-of-received').text(sum_number_of_received);
   $('#knobstick-number-of-sent').text(sum_number_of_sent);
   grid.loadData(__items);
-
-  $('th[data-property="total"]:last').trigger('click').trigger('click');
 
   onResize();
 });
