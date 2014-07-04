@@ -45,7 +45,7 @@
         <br />
         <span style="color:#1F497D;font-weight:bold;font-size: 90%"> <spring:message code="summary.body.summary_unit"/>
         <br />
-         <spring:message code="summary.body.between_the_unit" arguments="59" argumentSeparator=";"/>
+         <spring:message code="summary.body.between_the_unit" arguments="${unit}" argumentSeparator=";"/>
         </span>
         <br />
       </a>
