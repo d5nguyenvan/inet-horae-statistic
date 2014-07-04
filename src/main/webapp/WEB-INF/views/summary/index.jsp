@@ -43,7 +43,10 @@
       <a href="${details_url}" target="_blank" style="text-decoration: none;">
         <span style="color:#C00000;font-size: 40px; font-weight: bold;"> <fmt:formatNumber value="${total}" type="number"/></span>
         <br />
-        <span style="color:#1F497D;font-weight:bold;font-size: 90%"> <spring:message code="summary.body.summary_unit"/> <spring:message code="summary.body.summary_network"/></span>
+        <span style="color:#1F497D;font-weight:bold;font-size: 90%"> <spring:message code="summary.body.summary_unit"/>
+        <br />
+         <spring:message code="summary.body.between_the_unit" arguments="59" argumentSeparator=";"/>
+        </span>
         <br />
       </a>
         <div style="padding-bottom: 7px;"></div>
