@@ -41,7 +41,7 @@ class SummaryController {
   @RequestMapping(value = '/index.iws', method = [RequestMethod.GET])
   String index(Model model, @RequestParam(value = "unit", required = false) String unit) {
     def date = new Date();
-    model.addAttribute('auto_update_date', '00:00;' + date.format('d/M/yyyy'))
+    model.addAttribute('auto_update_date', '00:00;' + date.format('dd/MM/yyyy'))
     model.addAttribute('total', 79652)
     model.addAttribute('month_unit', '7;Thành phố')
     model.addAttribute('token', 'DU5PJU3GtHbQaX0zxiWoCMq8Z')
