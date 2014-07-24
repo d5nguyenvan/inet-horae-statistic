@@ -42,7 +42,7 @@ class SummaryController {
   String index(Model model, @RequestParam(value = "unit", required = false) String unit) {
     def date = new Date();
     model.addAttribute('auto_update_date', '00:00;' + date.format('dd/MM/yyyy'))
-    model.addAttribute('total', 26531+65531)
+    model.addAttribute('total', 26998+66666)
     model.addAttribute('month_unit', '7;Thành phố')
     model.addAttribute('token', 'DU5PJU3GtHbQaX0zxiWoCMq8Z')
     model.addAttribute('total_unit', 59)
