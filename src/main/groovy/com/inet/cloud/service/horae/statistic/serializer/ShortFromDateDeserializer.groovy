@@ -9,9 +9,6 @@ import org.joda.time.DateTime
 import org.joda.time.format.DateTimeFormat
 import org.springframework.util.StringUtils
 
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-
 /**
  * ShortFromDateDeserializer
  *
