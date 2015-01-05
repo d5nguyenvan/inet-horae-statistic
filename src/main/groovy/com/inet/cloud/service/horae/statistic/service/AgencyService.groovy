@@ -69,4 +69,27 @@ class AgencyService {
       }
     }
   }
+
+  /**
+   * @return the list of exception lists.
+   */
+  List<String> findExceptionList() {
+    if (LOG.isInfoEnabled()) {
+      LOG.info("BEGIN finding all agencies in exception list.")
+    }
+
+    try {
+      def cursor = db.agencies.find([show_in_statistic: false], [code: 1, _id: 0]).sort([name: 1])
+      try {
+        if (cursor)  cursor.collect { it.code }
+        else []
+      } finally {
+        cursor.close()
+      }
+    } finally {
+      if (LOG.isInfoEnabled()) {
+        LOG.info("END finding all agencies in exception list.")
+      }
+    }
+  }
 }

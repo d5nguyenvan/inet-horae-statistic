@@ -29,7 +29,7 @@ class DbConfig {
   MongoConnectionFactory mongoConnectionFactory() {
     // create connection factory.
     MongoConnectionFactory connectionFactory = new DefaultMongoConnectionFactory(
-        serverAddresses: [new ServerAddress('10.201.0.43', 27017)]
+        serverAddresses: [new ServerAddress('10.201.0.71', 27017)]
     )
 
     // init the connection.

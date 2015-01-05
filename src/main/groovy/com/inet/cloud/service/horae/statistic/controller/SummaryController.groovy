@@ -12,6 +12,7 @@ import groovy.transform.CompileStatic
 import groovy.util.logging.Slf4j
 import org.joda.time.DateTime
 import org.joda.time.format.DateTimeFormat
+import org.springframework.beans.factory.InitializingBean
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.http.HttpStatus
@@ -40,7 +41,7 @@ import javax.servlet.http.HttpSession
 @Controller
 @RequestMapping('/summary')
 @CompileStatic
-class SummaryController {
+class SummaryController implements InitializingBean {
   //~ class properties ========================================================
   @Autowired
   private KnobstickReportService knobstickReportService
@@ -51,6 +52,8 @@ class SummaryController {
   @Resource
   @Qualifier('exceptList')
   private List<String> exceptList
+
+  private List<String> resolveExceptList
   //~ class methods ===========================================================
   /**
    * @return redirect to index.
@@ -77,9 +80,9 @@ class SummaryController {
     try {
       summaryReportDto = knobstickReportService.executeSummary(
           new KnobstickReportCriteriaDto(unit: unit, type: 'edoc'),
-          exceptList
+          resolveExceptList
       )
-      agencies = (unit ? [ agencyService.findByCode(unit) ] : agencyService.findAllExcept(exceptList))
+      agencies = (unit ? [ agencyService.findByCode(unit) ] : agencyService.findAllExcept(resolveExceptList))
     } catch (Exception ex) {
       LOG.warn('An error occurs during summarizing knobstick data, all data will be reset.', ex)
     }
@@ -113,15 +116,33 @@ class SummaryController {
                                 HttpServletResponse response) {
     try {
       new OkMessage<List<KnobstickSummaryReportDto>>(
-          requestId: 'unknown',
+          requestId: UUID.randomUUID().toString(),
           result: knobstickReportService.executeDetails(
               new KnobstickReportCriteriaDto(type: 'edoc'),
-              exceptList
+              resolveExceptList
           ),
           action: 'details-report'
       )
     } catch (Exception ex) {
       new ErrorMessage('unknown_error', 'An known error occurs during generating detail report', '/summary/details-report.json', 'unknown')
     }
+  }
+
+  @Override
+  void afterPropertiesSet() throws Exception {
+    // find exception list.
+    if (agencyService != null && resolveExceptList == null) {
+      try {
+        resolveExceptList = agencyService.findExceptionList()
+      } catch (Exception ex) { /** no worry, we don't need handle this exception. */ }
+    }
+
+    // resolve exception list.
+    if (resolveExceptList == null) {
+      resolveExceptList = new ArrayList<>()
+    }
+
+    // add full exception list.
+    exceptList.each { code -> if (!resolveExceptList.contains(code)) resolveExceptList.add(code) }
   }
 }

@@ -51,7 +51,7 @@ class KnobstickReportService {
       } else if (from != null && to != null) {
         criteria['create_at'] = [$gte: from, $lte: to]
       } else {
-        from = DateTime.now().withMonthOfYear(1).withDayOfMonth(1).withTimeAtStartOfDay().toDate()
+        from = DateTime.now().withYear(2014).withMonthOfYear(1).withDayOfMonth(1).withTimeAtStartOfDay().toDate()
         to = DateTime.now().withTime(23, 59, 59, 999).toDate()
         criteria['create_at'] = [$gte: from, $lte: to]
       }
@@ -116,7 +116,7 @@ class KnobstickReportService {
       } else if (from != null && to != null) {
         criteria['create_at'] = [$gte: from, $lte: to]
       } else {
-        from = DateTime.now().withMonthOfYear(1).withDayOfMonth(1).withTimeAtStartOfDay().toDate()
+        from = DateTime.now().withYear(2014).withMonthOfYear(1).withDayOfMonth(1).withTimeAtStartOfDay().toDate()
         to = DateTime.now().withTime(23, 59, 59, 999).toDate()
         criteria['create_at'] = [$gte: from, $lte: to]
       }
