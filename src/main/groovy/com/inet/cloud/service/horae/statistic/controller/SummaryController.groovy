@@ -52,8 +52,6 @@ class SummaryController implements InitializingBean {
   @Resource
   @Qualifier('exceptList')
   private List<String> exceptList
-
-  private List<String> resolveExceptList
   //~ class methods ===========================================================
   /**
    * @return redirect to index.
@@ -77,6 +75,7 @@ class SummaryController implements InitializingBean {
     KnobstickSummaryReportDto summaryReportDto = null
     List<AgencyDto> agencies = []
 
+    List<String> resolveExceptList = resolveExceptionList();
     try {
       summaryReportDto = knobstickReportService.executeSummary(
           new KnobstickReportCriteriaDto(unit: unit, type: 'edoc'),
@@ -119,7 +118,7 @@ class SummaryController implements InitializingBean {
           requestId: UUID.randomUUID().toString(),
           result: knobstickReportService.executeDetails(
               new KnobstickReportCriteriaDto(type: 'edoc'),
-              resolveExceptList
+              resolveExceptionList()
           ),
           action: 'details-report'
       )
@@ -128,21 +127,28 @@ class SummaryController implements InitializingBean {
     }
   }
 
-  @Override
-  void afterPropertiesSet() throws Exception {
-    // find exception list.
-    if (agencyService != null && resolveExceptList == null) {
+  /**
+   * @return the exception list.
+   */
+  List<String> resolveExceptionList() {
+    List<String> resolveExceptionList = null;
+
+    if (agencyService != null) {
       try {
-        resolveExceptList = agencyService.findExceptionList()
-      } catch (Exception ex) { /** no worry, we don't need handle this exception. */ }
+        resolveExceptionList = agencyService.findExceptionList();
+      } catch (Exception ex) { /** don't worry. */ }
     }
 
-    // resolve exception list.
-    if (resolveExceptList == null) {
-      resolveExceptList = new ArrayList<>()
+    if (resolveExceptionList == null) {
+      resolveExceptionList = new ArrayList<>();
     }
 
-    // add full exception list.
-    exceptList.each { code -> if (!resolveExceptList.contains(code)) resolveExceptList.add(code) }
+    // add additional exception list.
+    exceptList.each { code -> if (!resolveExceptionList.contains(code)) resolveExceptionList.add(code) };
+
+    return resolveExceptionList;
   }
+
+  @Override
+  void afterPropertiesSet() throws Exception {}
 }
